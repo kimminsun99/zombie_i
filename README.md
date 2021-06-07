@@ -17,7 +17,7 @@
 
 
 
-memo
+# memo
 - Start, Game씬 RealScene폴더 안에
 
 - w,a,d,s로 플레이어 이동
