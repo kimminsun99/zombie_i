@@ -6,6 +6,10 @@ public class Door : MonoBehaviour
 {
     Animator animator;
 
+    [SerializeField]
+    private ScoreManager theScore;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,16 +19,29 @@ public class Door : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            animator.SetBool("IsOpen",true);
+            animator.SetBool("IsOpen", true);
+        }
+        if (GameManager.isNight)
+        {
+            if (ScoreManager.score < 70)
+            {
+                animator.SetBool("IsOpen", false);
+            }
+            else if (ScoreManager.score > 70)
+            {
+                animator.SetBool("IsOpen", true);
+            }
         }
     }
+
+
 
     void OnTriggerExit(Collider other)
     {
@@ -32,5 +49,6 @@ public class Door : MonoBehaviour
         {
             animator.SetBool("IsOpen",false);
         }
+
     }
 }

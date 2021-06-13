@@ -80,9 +80,9 @@ public class Enemy : MonoBehaviour
 
             anim.SetTrigger("doDie");
             audioSource.Play();
-            ScoreManager.score += scoreValue;
             Destroy(gameObject, 2f);
-           
+            ScoreManager.score += scoreValue;
+
 
 
         }

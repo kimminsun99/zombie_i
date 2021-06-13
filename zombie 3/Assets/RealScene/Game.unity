@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.45140058, g: 0.500893, b: 0.57231724, a: 1}
+  m_IndirectSpecularColor: {r: 0.4514004, g: 0.5008931, b: 0.57231724, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10138,6 +10138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16de9cdc8a6028e4cb8d0df61315bee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theScore: {fileID: 0}
 --- !u!65 &401998509
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16609,9 +16610,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac7fae536d0342e1b40d7c4002bee1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondPerRealTimeSecound: 4
+  secondPerRealTimeSecound: 50
   fogDensityCalc: 0.5
   nightFogDensity: 0.2
+  go_FreeZombie: {fileID: 1005615492}
 --- !u!4 &706047650 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4477030707949804, guid: 00debf980412c49418327c56a1a60db0,
@@ -16988,7 +16990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &720619483
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30962,7 +30964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1005615493
 Transform:
   m_ObjectHideFlags: 0

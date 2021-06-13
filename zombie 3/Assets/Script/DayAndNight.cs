@@ -12,6 +12,8 @@ public class DayAndNight : MonoBehaviour
     private float dayFogDensity; // 낮 상태의 Fog 밀도
     private float currentFogDensity; // 계산
 
+    // 좀비 등장 
+    [SerializeField] private GameObject go_FreeZombie;
 
     // Start is called before the first frame update
     void Start()
@@ -22,19 +24,22 @@ public class DayAndNight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         transform.Rotate(Vector3.right, 0.1f * secondPerRealTimeSecound * Time.deltaTime);
 
         if (transform.eulerAngles.x >= 170)
-           GameManager.isNight = true;
+            GameManager.isNight = true;
         else if (transform.eulerAngles.x >= 340)
             GameManager.isNight = false;
 
         if (GameManager.isNight)
         {
-            if(currentFogDensity <= nightFogDensity)
+            if (currentFogDensity <= nightFogDensity)
             {
                 currentFogDensity += 0.1f * fogDensityCalc * Time.deltaTime;
                 RenderSettings.fogDensity = currentFogDensity;
+                AppearZombie(); // 밤에 좀비 등장
+
             }
         }
 
@@ -46,5 +51,11 @@ public class DayAndNight : MonoBehaviour
                 RenderSettings.fogDensity = currentFogDensity;
             }
         }
+    }
+
+    // 좀비 등장 함수(오브젝트 적용)
+    public void AppearZombie()
+    {
+        go_FreeZombie.SetActive(true);
     }
 }
