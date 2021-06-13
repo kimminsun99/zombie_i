@@ -7,11 +7,18 @@ public class Grass : MonoBehaviour
     [SerializeField]
     private SphereCollider col; //구체 콜라이더
 
+
+    [SerializeField]
+    private int hp; //풀 체력
+
     //필요한 게임 오브젝트
     [SerializeField]
     private GameObject go_grass; // 기본 
     [SerializeField]
     private GameObject go_grass_item_prefab; // 풀 아이템
+    [SerializeField]
+    private GameObject go_effect_prefabs; //채굴 이펙트
+
 
 
     // 풀 아이템 생성 개수
@@ -19,6 +26,13 @@ public class Grass : MonoBehaviour
     private int MaxCount;
     private int MinCount;
 
+    public void Mining()
+    {
+    
+        hp--;
+        if (hp <= 0)
+            Destruction();
+    }
 
     private void Destruction()
     {

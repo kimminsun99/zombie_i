@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/RealScene/Menu.unity
     guid: b1ce65715a6ac405d89754c0c5b8982c
+  - enabled: 1
+    path: Assets/RealScene/end.unity
+    guid: 16652c1bb1b72024b92fecaaab552ca9
   m_configObjects: {}

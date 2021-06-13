@@ -34,6 +34,14 @@ public class PickaxeController : CloseWeaponController
             }
             yield return null;
         }
+        if (CheckObject())
+        {
+            if (hitInfo.transform.tag == "Grass")
+                hitInfo.transform.GetComponent<Grass>().Mining();
+            isSwing = false;
+            Debug.Log(hitInfo.transform.name);
+        }
+        yield return null;
     }
 
     public override void CloseWeaponChange(CloseWeapon _closeWeapon)
